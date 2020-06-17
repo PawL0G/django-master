@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from portfolio.models import Post
 
 
 def homepage(request):
@@ -23,3 +24,11 @@ def print_context(request):
 
     return render(request, 'portfolio/context.html', context)
 
+
+
+def project_index(request):
+    posts = Post
+    context = {
+        'posts': posts
+    }
+    return render(request, 'portfolio/index.html', context)
