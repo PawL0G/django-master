@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Context</title>
 </head>
 <body>
-$END$
+<ul>
+    {% for single_friend in friend}
+        {% if {{ single_friend == 'Pavel' % }
+            <li> I am </li>
+        {% else % }
+            <p>{{ single_friend|upper</p>
+    {% endfor %}
+</ul>
 </body>
 </html>
