@@ -14,12 +14,12 @@
 ```python
 python manage.py runserver
 ```
-2. enter venv
+2. enter venv (django envoirement)
 ```python
-. venv/bin/activate
+.\venv\Scripts\activate
 ```
 ### checking envoirement
-python3 -m venv
+python3 -m venv venv
 
 ### ORM migrate
 
@@ -28,3 +28,7 @@ python3 manage.py createmigrations
 
 - confirm migrate
 python3 manage.py migrate
+
+- open django shell
+
+python3 manage.py shell

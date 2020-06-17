@@ -6,11 +6,13 @@ def homepage(request):
         'full_name': 'Pavel Harkusha',
         'job_list': ['PHP', 'Python', 'JavaScript', 'VueJs'],
         'contact': {
-            "tele": '12151',
-            'email': 'mymail',
-            'addr': 'none'
+            "telephone": '0675004899',
+            'email': 'kievlanservers@gmail.com',
+            'address': 'none'
         }
     }
+
+
     return render(request, 'portfolio/index.html', context)
 
 
