@@ -525,16 +525,19 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
+           {% for post in posts %}
             <div class="title-box text-center">
               <h3 class="title-a">
-                {% for post in posts %}{{ post }}{%endfor%} TEST
+                {{ post.category.name }}
               </h3>
               <p class="subtitle-a">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                {{ post.description }}
               </p>
               <div class="line-mf"></div>
             </div>
+            {% endfor %}
           </div>
+
         </div>
         <div class="row">
           <div class="col-md-4">

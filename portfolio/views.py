@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from portfolio.models import Post
+from .models import Post
 
 
 def homepage(request):
+    posts = Post.objects.all()
     context = {
+        'posts': posts,
         'full_name': 'Pavel Harkusha',
         'job_list': ['PHP', 'Python', 'JavaScript', 'VueJs'],
         'contact': {
@@ -11,6 +13,7 @@ def homepage(request):
             'email': 'kievlanservers@gmail.com',
             'address': 'none'
         }
+
     }
 
 
@@ -27,7 +30,7 @@ def print_context(request):
 
 
 def project_index(request):
-    posts = Post
+    posts = Post.objects.all()
     context = {
         'posts': posts
     }

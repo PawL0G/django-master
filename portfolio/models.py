@@ -25,7 +25,7 @@ class Post(models.Model):
     post_date = models.DateTimeField(auto_now_add=True)
     text = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    tag = models.ForeignKey(Tag, on_delete=models.CASCADE, blank=True)
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE, blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
