@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from .models import Post
+from .models import Portfolio
 
 
 def homepage(request):
     posts = Post.objects.all()
+    portfolio = Portfolio.objects.all()
     context = {
         'posts': posts,
+        'portfolio': portfolio,
         'full_name': 'Pavel Harkusha',
         'job_list': ['PHP', 'Python', 'JavaScript', 'VueJs'],
         'contact': {
@@ -29,9 +32,3 @@ def print_context(request):
 
 
 
-def project_index(request):
-    posts = Post.objects.all()
-    context = {
-        'posts': posts
-    }
-    return render(request, 'portfolio/index.html', context)

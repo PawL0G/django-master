@@ -27,6 +27,21 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     tag = models.ForeignKey(Tag, on_delete=models.CASCADE, blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    image = models.ImageField(upload_to='uploads/%Y/%m/%d/', blank=True)
 
     def __str__(self):
         return self.title
+
+
+class Portfolio(models.Model):
+    title = models.CharField(max_length=150)
+    post_date = models.DateTimeField(auto_now_add=True)
+    text = models.TextField()
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE, blank=True, null=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    image = models.ImageField(upload_to='uploads/%Y/%m/%d/', blank=True)
+
+    def __str__(self):
+        return self.title
+
